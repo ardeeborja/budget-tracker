@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+.cardHighlight {
+  min-height: 100%;
+}
+
+.clear {
+  margin-bottom: 100px;
+}
+
+/*.addTran {
+	margin-bottom: 0px;
+}*/
+
+.tranTable {
+  table-layout: fixed;
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+.react-datepicker {
+  font-size: 1rem !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 1rem !important;
+}
+
+.react-datepicker__header {
+  padding-top: 6px !important;
+}
+
+.react-datepicker__navigation {
+  top: 13px !important;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  margin: 0.5rem !important;
+}
+
+.navBarElement,
+.footerElement {
+  background-color: #2a9d8f;
+}
+
+.addCatButton,
+.addCatButton:enabled,
+.loginButton,
+.loginButton:enabled,
+.regButton,
+.regButton:enabled,
+.addTranButton,
+.addTranButton:enabled {
+  background-color: #2a9d8f;
+  border-color: #2a9d8f;
+  box-shadow: none !important;
+}
+
+.addCatButton:disabled,
+.addCatButton:hover,
+.addCatButton:focus,
+.addCatButton:active:focus,
+.loginButton:disabled,
+.loginButton:hover,
+.loginButton:focus,
+.loginButton:active:focus,
+.regButton:disabled,
+.regButton:hover,
+.regButton:focus,
+.regButton:active:focus,
+.addTranButton:disabled,
+.addTranButton:hover,
+.addTranButton:focus,
+.addTranButton:active:focus {
+  background-color: #24877b !important;
+  border-color: #24877b !important;
+  box-shadow: none;
+}
+
+.bannerImage {
+  background: url('../components/bannerImage.svg') no-repeat center center;
+  background-size: cover;
+  height: 350px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileImage {
+  background: url('../pages/profile/profImage.svg') no-repeat center center;
+  background-size: cover;
+  height: 390px;
+}
+
+.aboutImage {
+  background: url('../pages/about/aboutImage.svg') no-repeat center center;
+  background-size: cover;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profileCardTopMargin {
+  margin-top: 150px;
+}
+
+.bannerTitle {
+  font-size: 50px;
+}
+
+.cardHead,
+.bannerTitle,
+.bannerSubTitle {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+.incomeBorderColor {
+  border-left-color: green;
+  border-left-width: 0.3em;
+}
+
+.expenseBorderColor {
+  border-left-color: red;
+  border-left-width: 0.3em;
+}
+
+.amountColorGreen {
+  color: green;
+}
+
+.amountColorRed {
+  color: red;
+}
+
+.cardHead {
+  color: #2a9d8f;
+}
+
+@media only screen and (max-width: 600px) {
+  .profileCardTopMargin {
+    margin-top: 20px;
+  }
+}
