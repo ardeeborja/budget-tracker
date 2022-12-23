@@ -97,8 +97,8 @@ export default function Login() {
     //pass accessToken grom google to allow us to use google API to send an email to the google login user who logs on for the first time
 
     fetch(
-      // 'http://localhost:8000/api/user/verify-google-id-token',
-      'https://sleepy-atoll-78626.herokuapp.com/api/user/verify-google-id-token',
+      'http://localhost:8000/api/user/verify-google-id-token',
+      // 'https://sleepy-atoll-78626.herokuapp.com/api/user/verify-google-id-token',
       {
         method: 'POST',
         headers: {
