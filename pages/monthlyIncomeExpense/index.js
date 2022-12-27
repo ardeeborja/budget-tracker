@@ -38,8 +38,8 @@ export default function monthlyIncome() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    fetch('http://localhost:8000/api/transaction/list', {
-      // fetch('https://sleepy-atoll-78626.herokuapp.com/api/transaction/list', {
+    // fetch('http://localhost:8000/api/transaction/list', {
+    fetch('https://jade-alligator-hose.cyclic.app/api/transaction/list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

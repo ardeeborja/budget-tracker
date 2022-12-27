@@ -53,8 +53,8 @@ export default function CreateCategory() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    fetch('http://localhost:8000/api/category/get', {
-      // fetch('https://sleepy-atoll-78626.herokuapp.com/api/category/get', {
+    // fetch('http://localhost:8000/api/category/get', {
+    fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -98,8 +98,8 @@ export default function CreateCategory() {
     let token = localStorage.getItem('token');
     console.log(token);
 
-    fetch('http://localhost:8000/api/category/add', {
-      // fetch('https://sleepy-atoll-78626.herokuapp.com/api/category/add', {
+    // fetch('http://localhost:8000/api/category/add', {
+    fetch('https://jade-alligator-hose.cyclic.app/api/category/add', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

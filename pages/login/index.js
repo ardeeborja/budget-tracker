@@ -32,8 +32,8 @@ export default function Login() {
   function authenticate(e) {
     e.preventDefault();
 
-    fetch('http://localhost:8000/api/user/login', {
-      // fetch('https://sleepy-atoll-78626.herokuapp.com/api/user/login', {
+    // fetch('http://localhost:8000/api/user/login', {
+    fetch('https://jade-alligator-hose.cyclic.app/api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,8 +49,8 @@ export default function Login() {
         if (data.accessToken) {
           localStorage.setItem('token', data.accessToken);
 
-          fetch('http://localhost:8000/api/user/details', {
-            // fetch('https://sleepy-atoll-78626.herokuapp.com/api/user/details', {
+          // fetch('http://localhost:8000/api/user/details', {
+          fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
             headers: {
               Authorization: `Bearer ${data.accessToken}`,
             },
@@ -98,7 +98,7 @@ export default function Login() {
 
     fetch(
       'http://localhost:8000/api/user/verify-google-id-token',
-      // 'https://sleepy-atoll-78626.herokuapp.com/api/user/verify-google-id-token',
+      // 'https://jade-alligator-hose.cyclic.app/api/user/verify-google-id-token',
       {
         method: 'POST',
         headers: {
@@ -119,8 +119,8 @@ export default function Login() {
           localStorage.setItem('token', data.accessToken);
 
           //run a fetch req to get the user's details and upfate our global user state and save our user details int o the localstorage
-          fetch('http://localhost:8000/api/user/details', {
-            // fetch('https://sleepy-atoll-78626.herokuapp.com/api/user/details', {
+          // fetch('http://localhost:8000/api/user/details', {
+          fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
             headers: {
               Authorization: `Bearer ${data.accessToken}`,
             },

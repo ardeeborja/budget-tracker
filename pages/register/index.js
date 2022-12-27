@@ -39,8 +39,8 @@ export default function Register() {
   function registerUser(e) {
     e.preventDefault();
 
-    fetch('http://localhost:8000/api/user/email-exists', {
-      // fetch('https://sleepy-atoll-78626.herokuapp.com/api/user/email-exists', {
+    // fetch('http://localhost:8000/api/user/email-exists', {
+    fetch('https://jade-alligator-hose.cyclic.app/api/user/email-exists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -52,8 +52,8 @@ export default function Register() {
         console.log(data); //boolean
 
         if (data === false) {
-          fetch('http://localhost:8000/api/user', {
-            // fetch('https://sleepy-atoll-78626.herokuapp.com/api/user', {
+          // fetch('http://localhost:8000/api/user', {
+          fetch('https://jade-alligator-hose.cyclic.app/api/user', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
