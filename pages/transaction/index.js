@@ -73,7 +73,7 @@ export default function CreateCategory() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('http://localhost:8000/api/category/get', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
     fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
       method: 'GET',
       headers: {
@@ -279,7 +279,7 @@ export default function CreateCategory() {
 
     const token = localStorage.getItem('token');
 
-    // fetch('http://localhost:8000/api/transaction/add', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/add', {
     fetch('https://jade-alligator-hose.cyclic.app/api/transaction/add', {
       method: 'PUT',
       headers: {

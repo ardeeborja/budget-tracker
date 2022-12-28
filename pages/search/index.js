@@ -68,7 +68,7 @@ export default function Search() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('http://localhost:8000/api/transaction/search', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/search', {
     fetch('https://jade-alligator-hose.cyclic.app/api/transaction/search', {
       method: 'GET',
       headers: {

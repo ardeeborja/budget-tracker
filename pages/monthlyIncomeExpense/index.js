@@ -38,7 +38,7 @@ export default function monthlyIncome() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('http://localhost:8000/api/transaction/list', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/list', {
     fetch('https://jade-alligator-hose.cyclic.app/api/transaction/list', {
       method: 'GET',
       headers: {
@@ -287,7 +287,7 @@ export default function monthlyIncome() {
 // 	// const {tokenProvider} = useContext(UserContext)
 // 	// console.log(tokenProvider)
 
-// 	const res = await fetch('http://localhost:8000/api/category/get',{
+// 	const res = await fetch('https://jade-alligator-hose.cyclic.app/api/category/get',{
 // 			method: 'GET',
 // 			headers: {
 // 				"Content-Type": 'application/json',

@@ -48,7 +48,7 @@ export default function CategoryPercentages() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('http://localhost:8000/api/category/get', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
     fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
       method: 'GET',
       headers: {

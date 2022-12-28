@@ -39,7 +39,7 @@ export default function Register() {
   function registerUser(e) {
     e.preventDefault();
 
-    // fetch('http://localhost:8000/api/user/email-exists', {
+    // fetch('https://jade-alligator-hose.cyclic.app/api/user/email-exists', {
     fetch('https://jade-alligator-hose.cyclic.app/api/user/email-exists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -52,7 +52,7 @@ export default function Register() {
         console.log(data); //boolean
 
         if (data === false) {
-          // fetch('http://localhost:8000/api/user', {
+          // fetch('https://jade-alligator-hose.cyclic.app/api/user', {
           fetch('https://jade-alligator-hose.cyclic.app/api/user', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
