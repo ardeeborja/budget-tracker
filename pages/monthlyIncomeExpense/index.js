@@ -38,8 +38,8 @@ export default function monthlyIncome() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/list', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/transaction/list', {
+    // fetch('http://localhost:8000/api/transaction/list', {
+    fetch('http://localhost:8000/api/transaction/list', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ export default function monthlyIncome() {
 
   return (
     <Fragment>
-      <Container>
+      <Container className="container-height-others">
         <Row>
           <Col className="mt-5">
             <h2 className="text-left cardHead">Monthly Income</h2>
@@ -252,7 +252,7 @@ export default function monthlyIncome() {
           </Col>
         </Row>
         <Row>
-          <Col className="mt-5">
+          <Col className="my-5">
             <h2 className="text-left cardHead">Monthly Expense</h2>
             <BarChart
               type="Expense"
@@ -287,7 +287,7 @@ export default function monthlyIncome() {
 // 	// const {tokenProvider} = useContext(UserContext)
 // 	// console.log(tokenProvider)
 
-// 	const res = await fetch('https://jade-alligator-hose.cyclic.app/api/category/get',{
+// 	const res = await fetch('http://localhost:8000/api/category/get',{
 // 			method: 'GET',
 // 			headers: {
 // 				"Content-Type": 'application/json',

@@ -19,7 +19,7 @@ export default function NavBar() {
       </Link>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="ml-auto">
           <Link href="/">
             <a className="nav-link" role="button">
               Home

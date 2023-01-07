@@ -43,8 +43,8 @@ export default function Profile() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
+    // fetch('http://localhost:8000/api/category/get', {
+    fetch('http://localhost:8000/api/category/get', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -72,22 +72,22 @@ export default function Profile() {
   }
 
   return (
-    <Container>
+    <Container className="container-height-others">
       <h2 className="text-center mt-5 cardHead">Profile</h2>
 
       <Row>
-        <Col md="6">
+        <Col className="profileCardTopMargin" md="6">
           {/* <Col className="mr-auto mx-auto" md="6"> */}
           {/* <p className="h-25 d-inline-block"></p> */}
-          <Card className="profileCardTopMargin">
+          <Card>
             <Card.Body>
-              <h6 className="mt-4">Name: {`${fName} ${lName}`}</h6>
-              <h6>Mobile: {mobile}</h6>
-              <h6 className="mb-4">Email: {email}</h6>
+              <h3 className="mt-4">{`${fName} ${lName}`}</h3>
+              <h4>{mobile}</h4>
+              <h4 className="mb-4">{email}</h4>
             </Card.Body>
           </Card>
         </Col>
-        <Col className="profileImage mt-5" md="6"></Col>
+        <Col className="profileImage my-5" md="6"></Col>
       </Row>
     </Container>
   );

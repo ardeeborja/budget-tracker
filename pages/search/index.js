@@ -68,8 +68,8 @@ export default function Search() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/search', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/transaction/search', {
+    // fetch('http://localhost:8000/api/transaction/search', {
+    fetch('http://localhost:8000/api/transaction/search', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -165,8 +165,8 @@ export default function Search() {
 
   return (
     <Fragment>
-      <Container>
-        <Row>
+      <Container className="container-height-others">
+        <Row className="mb-5">
           <Col sm={4}>
             <h2 className="text-left mt-5 cardHead">Search Transaction</h2>
 

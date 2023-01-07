@@ -5,13 +5,49 @@
   font-family: 'Lato', sans-serif;
 }
 
-.cardHighlight {
-  min-height: 100%;
+.container-image {
+  background-image: url('./../public/bg.jpg');
+  background-size: cover;
+  background-position: top;
+  /* max-width: 5025px; */
 }
 
-.clear {
-  margin-bottom: 100px;
+.container-height {
+  min-height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.container-height-reg {
+  min-height: calc(130vh - 112px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container-height-home {
+  min-height: calc(100vh - 494px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.container-height-others {
+  min-height: calc(100vh - 112px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cardHighlight {
+  min-height: 100%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/* .clear {
+  margin-bottom: 100px;
+} */
 
 /*.addTran {
 	margin-bottom: 0px;
@@ -47,6 +83,7 @@
 .navBarElement,
 .footerElement {
   background-color: #2a9d8f;
+  width: 100%;
 }
 
 .addCatButton,
@@ -86,7 +123,7 @@
 .bannerImage {
   background: url('../components/bannerImage.svg') no-repeat center center;
   background-size: cover;
-  height: 350px;
+  height: 550px;
   color: white;
   display: flex;
   justify-content: center;
@@ -111,7 +148,11 @@
 }
 
 .profileCardTopMargin {
-  margin-top: 150px;
+  /* margin-top: 150px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2a9d8f;
 }
 
 .bannerTitle {
@@ -145,10 +186,42 @@
 
 .cardHead {
   color: #2a9d8f;
+  margin-top: 20px;
+}
+
+.try-car {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
 }
 
 @media only screen and (max-width: 600px) {
-  .profileCardTopMargin {
-    margin-top: 20px;
+  * {
+    font-size: 0.85rem;
+  }
+  .container-height-home {
+    min-height: calc(100vh - 469.34px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .container-height {
+    min-height: calc(100vh - 92.14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-height-reg {
+    min-height: calc(130vh - 92.14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-height-others {
+    min-height: calc(100vh - 92.14px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 }

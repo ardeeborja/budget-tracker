@@ -48,8 +48,8 @@ export default function CategoryPercentages() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
+    // fetch('http://localhost:8000/api/category/get', {
+    fetch('http://localhost:8000/api/category/get', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ export default function CategoryPercentages() {
 
   return (
     <Fragment>
-      <Container>
+      <Container className="container-height-others">
         <Row>
           <Col className="mt-5" sm={{ span: 6, offset: 3 }}>
             <Form onSubmit={(e) => getCategory(e)}>
@@ -195,7 +195,7 @@ export default function CategoryPercentages() {
           </Col>
         </Row>
         <Row>
-          <Col className="mt-5">
+          <Col className="my-5">
             <h2 className="text-center cardHead">Category Percentage</h2>
             {isAllZero === true ? (
               <p className="text-center">No Data Available</p>

@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { Form, Button, Card, Row, Col } from 'react-bootstrap';
+import { Form, Button, Card, Row, Col, Container } from 'react-bootstrap';
 
 import Swal from 'sweetalert2';
 
@@ -32,8 +32,8 @@ export default function Login() {
   function authenticate(e) {
     e.preventDefault();
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/user/login', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/user/login', {
+    // fetch('http://localhost:8000/api/user/login', {
+    fetch('http://localhost:8000/api/user/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -50,8 +50,8 @@ export default function Login() {
         if (data.accessToken) {
           localStorage.setItem('token', data.accessToken);
 
-          // fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
-          fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
+          // fetch('http://localhost:8000/api/user/details', {
+          fetch('http://localhost:8000/api/user/details', {
             headers: {
               Authorization: `Bearer ${data.accessToken}`,
               'Access-Control-Allow-Origin': '*',
@@ -99,8 +99,8 @@ export default function Login() {
     //pass accessToken grom google to allow us to use google API to send an email to the google login user who logs on for the first time
 
     fetch(
-      // 'https://jade-alligator-hose.cyclic.app/api/user/verify-google-id-token',
-      'https://jade-alligator-hose.cyclic.app/api/user/verify-google-id-token',
+      // 'http://localhost:8000/api/user/verify-google-id-token',
+      'http://localhost:8000/api/user/verify-google-id-token',
       {
         method: 'POST',
         headers: {
@@ -122,8 +122,8 @@ export default function Login() {
           localStorage.setItem('token', data.accessToken);
 
           //run a fetch req to get the user's details and upfate our global user state and save our user details int o the localstorage
-          // fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
-          fetch('https://jade-alligator-hose.cyclic.app/api/user/details', {
+          // fetch('http://localhost:8000/api/user/details', {
+          fetch('http://localhost:8000/api/user/details', {
             headers: {
               Authorization: `Bearer ${data.accessToken}`,
               'Access-Control-Allow-Origin': '*',
@@ -168,62 +168,66 @@ export default function Login() {
   // }
 
   return (
-    <Row>
-      <Col className="mr-auto mx-auto" md="5">
-        <Card className="mt-4">
-          <Card.Body>
-            <Card.Title className="text-center cardHead">
-              Budget Tracker
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted text-center">
-              Login Now
-            </Card.Subtitle>
-            <Form onSubmit={(e) => authenticate(e)}>
-              <Form.Group controlId="userEmail">
-                <Form.Label className="mt-4">Email:</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="userPassword">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              {isActive ? (
-                // <Button variant="dark" type="submit" className="btn-block">
-                <Button type="submit" className="btn-block loginButton">
-                  Submit
-                </Button>
-              ) : (
-                // <Button variant="dark" disabled className="btn-block">
-                <Button disabled className="btn-block loginButton">
-                  Submit
-                </Button>
-              )}
-              <GoogleLogin
-                clientId="793860826559-5ai2gtrphvumfqd0t8tdr6csctmtmusp.apps.googleusercontent.com"
-                buttonText="Login Using Google"
-                onSuccess={authenticateGoogleToken}
-                // onFailure={failed}
-                onFailure={authenticateGoogleToken}
-                cookiePolicy={'single_host_origin'}
-                className="w-100 text-center my-4 d-flex justify-content-center"
-              />
-            </Form>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+    <div className="container-image">
+      <Container className="container-height">
+        <Row>
+          <Col md="5">
+            <Card>
+              <Card.Body>
+                <Card.Title className="text-center cardHead">
+                  Budget Tracker
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted text-center">
+                  Login Now
+                </Card.Subtitle>
+                <Form onSubmit={(e) => authenticate(e)}>
+                  <Form.Group controlId="userEmail">
+                    <Form.Label className="mt-4">Email:</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="userPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  {isActive ? (
+                    // <Button variant="dark" type="submit" className="btn-block">
+                    <Button type="submit" className="btn-block loginButton">
+                      Submit
+                    </Button>
+                  ) : (
+                    // <Button variant="dark" disabled className="btn-block">
+                    <Button disabled className="btn-block loginButton">
+                      Submit
+                    </Button>
+                  )}
+                  <GoogleLogin
+                    clientId="793860826559-5ai2gtrphvumfqd0t8tdr6csctmtmusp.apps.googleusercontent.com"
+                    buttonText="Login Using Google"
+                    onSuccess={authenticateGoogleToken}
+                    // onFailure={failed}
+                    onFailure={authenticateGoogleToken}
+                    cookiePolicy={'single_host_origin'}
+                    className="w-100 text-center my-4 d-flex justify-content-center"
+                  />
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 

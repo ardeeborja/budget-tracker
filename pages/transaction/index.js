@@ -73,8 +73,8 @@ export default function CreateCategory() {
     const token = localStorage.getItem('token');
     console.log(token);
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/category/get', {
+    // fetch('http://localhost:8000/api/category/get', {
+    fetch('http://localhost:8000/api/category/get', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -279,8 +279,8 @@ export default function CreateCategory() {
 
     const token = localStorage.getItem('token');
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/transaction/add', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/transaction/add', {
+    // fetch('http://localhost:8000/api/transaction/add', {
+    fetch('http://localhost:8000/api/transaction/add', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -325,8 +325,8 @@ export default function CreateCategory() {
 
   return (
     <>
-      <Container>
-        <Row>
+      <Container className="container-height-others">
+        <Row className="mb-5">
           <Col sm={4}>
             <h2 className="text-left mt-5 cardHead">Create Transaction</h2>
             <h5 className="text-left mt-3">

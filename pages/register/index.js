@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { Form, Button, Card, Row, Col } from 'react-bootstrap';
+import { Form, Button, Card, Row, Col, Container } from 'react-bootstrap';
 
 //import router from nextjs for redirection
 import Router from 'next/router';
@@ -39,8 +39,8 @@ export default function Register() {
   function registerUser(e) {
     e.preventDefault();
 
-    // fetch('https://jade-alligator-hose.cyclic.app/api/user/email-exists', {
-    fetch('https://jade-alligator-hose.cyclic.app/api/user/email-exists', {
+    // fetch('http://localhost:8000/api/user/email-exists', {
+    fetch('http://localhost:8000/api/user/email-exists', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -52,8 +52,8 @@ export default function Register() {
         console.log(data); //boolean
 
         if (data === false) {
-          // fetch('https://jade-alligator-hose.cyclic.app/api/user', {
-          fetch('https://jade-alligator-hose.cyclic.app/api/user', {
+          // fetch('http://localhost:8000/api/user', {
+          fetch('http://localhost:8000/api/user', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -104,94 +104,98 @@ export default function Register() {
   }
 
   return (
-    <Row>
-      <Col className="mr-auto mx-auto" md="5">
-        <Card className="mt-4">
-          <Card.Body>
-            <Card.Title className="text-center cardHead">
-              Budget Tracker
-            </Card.Title>
-            <Card.Subtitle className="mb-2 text-muted text-center">
-              Register Now
-            </Card.Subtitle>
+    <div className="container-image">
+      <Container className="container-height-reg">
+        <Row>
+          <Col md="5">
+            <Card>
+              <Card.Body>
+                <Card.Title className="text-center cardHead">
+                  Budget Tracker
+                </Card.Title>
+                <Card.Subtitle className="mb-2 text-muted text-center">
+                  Register Now
+                </Card.Subtitle>
 
-            <Form onSubmit={(e) => registerUser(e)}>
-              <Form.Group controlId="userFirstName">
-                <Form.Label className="mt-4">First Name:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="userLastName">
-                <Form.Label>Last Name:</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="userEmail">
-                <Form.Label>Email:</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="mobileNo">
-                <Form.Label>Mobile Number:</Form.Label>
-                <Form.Control
-                  type="number"
-                  placeholder="Enter Mobile No."
-                  value={mobileNo}
-                  onChange={(e) => setMobileNo(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="password1">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Enter Password"
-                  value={password1}
-                  onChange={(e) => setPassword1(e.target.value)}
-                  required
-                />
-              </Form.Group>
-              <Form.Group controlId="password2">
-                <Form.Label>Confirm Password:</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm Password"
-                  value={password2}
-                  onChange={(e) => setPassword2(e.target.value)}
-                  required
-                />
-              </Form.Group>
+                <Form onSubmit={(e) => registerUser(e)}>
+                  <Form.Group controlId="userFirstName">
+                    <Form.Label className="mt-4">First Name:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter First Name"
+                      value={firstName}
+                      onChange={(e) => setFirstName(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="userLastName">
+                    <Form.Label>Last Name:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter Last Name"
+                      value={lastName}
+                      onChange={(e) => setLastName(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="userEmail">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="mobileNo">
+                    <Form.Label>Mobile Number:</Form.Label>
+                    <Form.Control
+                      type="number"
+                      placeholder="Enter Mobile No."
+                      value={mobileNo}
+                      onChange={(e) => setMobileNo(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="password1">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter Password"
+                      value={password1}
+                      onChange={(e) => setPassword1(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="password2">
+                    <Form.Label>Confirm Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Confirm Password"
+                      value={password2}
+                      onChange={(e) => setPassword2(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
 
-              {isActive ? (
-                // <Button variant="dark" type="submit" className="btn-block">
-                <Button type="submit" className="btn-block regButton">
-                  Register
-                </Button>
-              ) : (
-                // <Button variant="dark" disabled className="btn-block">
-                <Button disabled className="btn-block regButton">
-                  Register
-                </Button>
-              )}
-            </Form>
-          </Card.Body>
-        </Card>
-      </Col>
-    </Row>
+                  {isActive ? (
+                    // <Button variant="dark" type="submit" className="btn-block">
+                    <Button type="submit" className="btn-block regButton mb-4">
+                      Register
+                    </Button>
+                  ) : (
+                    // <Button variant="dark" disabled className="btn-block">
+                    <Button disabled className="btn-block regButton mb-4">
+                      Register
+                    </Button>
+                  )}
+                </Form>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
