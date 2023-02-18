@@ -1,8 +1,18 @@
 import { Row, Col, Card, Container } from 'react-bootstrap';
+import { useInView } from 'react-intersection-observer';
 
 export default function Highlights() {
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  });
+
   return (
-    <Container className="container-height-home">
+    <Container
+      className={`container-height-home ${
+        inView ? 'onscroll onscroll-zoom' : 'onscroll'
+      }`}
+      ref={ref}
+    >
       <Row className="my-5">
         <Col className="mb-3" xs={12} md={4}>
           <Card className="cardHighlight">

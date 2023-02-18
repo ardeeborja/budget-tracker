@@ -1,10 +1,11 @@
 import { Container, Carousel } from 'react-bootstrap';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 import finance from '../components/finance.jpg';
 import money from '../components/money.jpg';
 import graph from '../components/graph.jpg';
 
-export default function Comments() {
+export default function Slider() {
   const FinanceImage = () => {
     return <Image src={finance} alt="finance pic" />;
   };
@@ -15,8 +16,15 @@ export default function Comments() {
     return <Image src={graph} alt="graph pic" />;
   };
 
+  const { ref, inView } = useInView({
+    threshold: 0.4,
+  });
+
   return (
-    <Container className="mb-5">
+    <Container
+      className={`mb-5 ${inView ? 'onscroll onscroll-zoom' : 'onscroll'}`}
+      ref={ref}
+    >
       <Carousel>
         <Carousel.Item>
           <FinanceImage className="d-block w-100" />

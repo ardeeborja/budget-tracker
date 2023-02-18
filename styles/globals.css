@@ -5,6 +5,18 @@
   font-family: 'Lato', sans-serif;
 }
 
+.onscroll {
+  opacity: 0;
+  transform: scale(85%);
+  transition: 2s;
+}
+
+.onscroll-zoom {
+  opacity: 1;
+  transform: scale(100%);
+  transition: 2s;
+}
+
 .container-image {
   background-image: url('./../public/bg.jpg');
   background-size: cover;
