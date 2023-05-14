@@ -22,7 +22,9 @@ export default function Slider() {
 
   return (
     <Container
-      className={`mb-5 ${inView ? 'onscroll onscroll-zoom' : 'onscroll'}`}
+      className={`carousel mb-5 ${
+        inView ? 'onscroll onscroll-zoom' : 'onscroll'
+      }`}
       ref={ref}
     >
       <Carousel>
